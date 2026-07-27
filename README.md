@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ondřej Košťál — Design & Development</title>
-<meta name="description" content="Ondřej Košťál — multi-disciplinary graphic designer specializing in brand identity, packaging, and digital experiences.">
+<title>Ondřej Košťál — CV &amp; Projects</title>
+<meta name="description" content="Ondřej Košťál — IT student at CZU. Application support, Python, C#, JavaScript. Personal CV and projects.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg: #0b0f0e;
@@ -24,9 +24,9 @@
     --radius-lg: 20px;
     --radius-md: 14px;
     --radius-sm: 8px;
-    --maxw: 1180px;
-    --font-display: 'Poppins', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --maxw: 1080px;
+    --font-display: 'Roboto', sans-serif;
+    --font-body: 'Roboto', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
     --ease: cubic-bezier(.22,.9,.32,1);
   }
@@ -38,14 +38,14 @@
     background: var(--bg);
     color: var(--text);
     font-family: var(--font-body);
-    line-height: 1.5;
+    line-height: 1.55;
     -webkit-font-smoothing: antialiased;
   }
   img{ max-width:100%; display:block; }
   a{ color: inherit; text-decoration: none; }
   ul{ list-style:none; margin:0; padding:0; }
   h1,h2,h3{ font-family: var(--font-display); margin:0; }
-  section{ padding: 88px 0; }
+  section{ padding: 80px 0; }
   .wrap{ max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
 
   ::selection{ background: var(--accent); color: var(--accent-ink); }
@@ -63,8 +63,10 @@
   }
   .eyebrow::before{
     content:"";
-    width:18px; height:1px;
+    width:5px; height:5px;
+    border-radius: 50%;
     background: var(--accent);
+    flex-shrink:0;
   }
 
   /* ---------- Header ---------- */
@@ -84,23 +86,24 @@
     max-width: var(--maxw);
     margin:0 auto;
   }
-  .brand{ display:flex; flex-direction:column; gap:1px; }
+  .brand{ display:flex; align-items:center; gap:11px; }
+  .brand-text{ display:flex; flex-direction:column; gap:1px; }
   .brand-name{
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 17px;
-    letter-spacing: .02em;
+    font-size: 16px;
+    letter-spacing: .01em;
   }
   .brand-tag{
     font-family: var(--font-mono);
     font-size: 10px;
-    letter-spacing: .16em;
+    letter-spacing: .14em;
     text-transform: uppercase;
     color: var(--text-muted);
   }
 
   nav.primary-nav{ display:none; }
-  .primary-nav ul{ display:flex; gap: 34px; }
+  .primary-nav ul{ display:flex; gap: 30px; }
   .primary-nav a{
     font-size: 14px;
     font-weight: 500;
@@ -118,7 +121,7 @@
   }
   .primary-nav a:hover::after{ right:0; }
 
-  .header-actions{ display:flex; align-items:center; gap:14px; }
+  .header-actions{ display:flex; align-items:center; gap:12px; }
   .btn{
     font-family: var(--font-body);
     font-weight: 600;
@@ -138,13 +141,13 @@
     color: var(--accent-ink);
   }
   .btn-accent:hover{ transform: translateY(-2px); box-shadow: 0 10px 24px -8px rgba(110,240,194,0.45); }
-  .btn-ghost{
+  .btn-outline{
     background: transparent;
     border-color: var(--line-strong);
     color: var(--text);
     display:none;
   }
-  .btn-ghost:hover{ border-color: var(--accent); color: var(--accent); }
+  .btn-outline:hover{ border-color: var(--accent); color: var(--accent); }
 
   .hamburger{
     width: 42px; height: 42px;
@@ -187,40 +190,6 @@
   .mobile-nav li:last-child a{ border-bottom:none; }
   .mobile-nav a:hover{ color: var(--accent); }
 
-  /* ---------- Hero ---------- */
-  .hero{ padding: 64px 0 72px; }
-  .hero-inner{
-    display:flex;
-    flex-direction:column;
-    gap: 22px;
-  }
-  .hero-eyebrow{ margin-bottom: 4px; }
-  .hero h1{
-    font-size: clamp(34px, 8vw, 64px);
-    line-height: 1.06;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-  }
-  .hero h1 mark{
-    background: var(--accent);
-    color: var(--accent-ink);
-    padding: 0 10px;
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
-  }
-  .hero p.lede{
-    font-size: 17px;
-    color: var(--text-muted);
-    max-width: 46ch;
-  }
-  .hero-cta{ display:flex; gap:14px; margin-top:6px; flex-wrap:wrap; }
-  .btn-outline{
-    background: transparent;
-    border-color: var(--line-strong);
-    color: var(--text);
-  }
-  .btn-outline:hover{ border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
-
   /* ---------- Reveal animation ---------- */
   .reveal{
     opacity:0;
@@ -235,203 +204,242 @@
     html{ scroll-behavior:auto; }
   }
 
+  /* ---------- Hero ---------- */
+  .hero{ padding: 60px 0 76px; }
+  .hero-inner{
+    display:flex;
+    flex-direction:column;
+    gap: 24px;
+  }
+  .status-chip{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size: 12.5px; font-weight:500; color: var(--text-muted);
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    padding: 6px 13px;
+    width: fit-content;
+  }
+  .status-dot{
+    width:7px; height:7px; border-radius:50%; background: var(--accent);
+    box-shadow: 0 0 0 3px rgba(110,240,194,0.18);
+    flex-shrink:0;
+  }
+  .status-chip-sm{
+    font-size: 10px;
+    padding: 3px 9px 3px 8px;
+    margin-top: 4px;
+    border-color: var(--line);
+    color: var(--text-faint);
+  }
+  .status-chip-sm .status-dot{ width:5px; height:5px; box-shadow: 0 0 0 2px rgba(110,240,194,0.18); }
+  .hero h1{
+    font-size: clamp(30px, 7vw, 50px);
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .hero h1 span{ color: var(--accent); }
+  .hero blockquote{
+    margin:0;
+    font-size: 16.5px;
+    color: var(--text-muted);
+    max-width: 60ch;
+    border-left: 2px solid var(--accent-dim);
+    padding-left: 18px;
+    font-style: normal;
+  }
+  .hero-cta{ display:flex; gap:14px; margin-top:6px; flex-wrap:wrap; }
+
+  .quick-facts{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .fact{
+    display:flex; align-items:flex-start; gap:12px;
+    padding: 14px 16px;
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+  }
+  .fact svg{ width:18px; height:18px; color: var(--accent); flex-shrink:0; margin-top:2px; }
+  .fact strong{ display:block; font-size:13.5px; font-weight:600; }
+  .fact span{ font-size:12.5px; color: var(--text-muted); }
+
   /* ---------- Section headings ---------- */
-  .section-head{ margin-bottom: 40px; }
+  .section-head{ margin-bottom: 36px; }
   .section-head h2{
-    font-size: clamp(24px, 4.2vw, 34px);
+    font-size: clamp(22px, 3.6vw, 30px);
     font-weight: 700;
     margin-top: 10px;
     letter-spacing: -0.01em;
   }
 
-  /* ---------- Services ---------- */
-  .services-grid{
+  /* ---------- Skills ---------- */
+  .skills-list{ display:flex; flex-direction:column; gap: 18px; }
+  .skill-row{
+    display:flex; flex-direction:column; gap:8px;
+  }
+  .skill-top{ display:flex; justify-content:space-between; align-items:baseline; gap:10px; }
+  .skill-name{ font-size:14.5px; font-weight:600; }
+  .skill-level{ font-family: var(--font-mono); font-size:11px; color: var(--text-faint); text-transform:uppercase; letter-spacing:.06em; }
+  .skill-track{ height:6px; border-radius:999px; background: var(--bg-raised-2); overflow:hidden; border:1px solid var(--line); }
+  .skill-fill{ height:100%; border-radius:999px; background: linear-gradient(90deg, var(--accent-dim), var(--accent)); width:0%; transition: width 1.1s var(--ease); }
+  .skill-fill.in-view{ }
+
+  .exp-list{ display:flex; flex-direction:column; margin-top: 40px; }
+  .exp-item{
+    display:grid;
+    grid-template-columns: 18px 1fr;
+    gap: 16px;
+    padding-bottom: 26px;
+    position:relative;
+  }
+  .exp-item::before{
+    content:"";
+    position:absolute; left:8px; top:20px; bottom:0;
+    width:1px; background: var(--line);
+  }
+  .exp-item:last-child::before{ display:none; }
+  .exp-dot{
+    width:18px; height:18px; border-radius:50%;
+    background: var(--bg-raised); border: 2px solid var(--accent);
+    margin-top:2px;
+  }
+  .exp-role{ font-weight:600; font-size:15px; }
+  .exp-meta{ font-family: var(--font-mono); font-size:11.5px; color: var(--accent); margin: 3px 0 6px; letter-spacing:.03em; }
+  .exp-desc{ font-size: 13.5px; color: var(--text-muted); max-width: 52ch; }
+
+  /* ---------- Projects ---------- */
+  .projects-grid{
     display:grid;
     grid-template-columns: 1fr;
     gap: 16px;
   }
-  .service-card{
+  .project-card{
     background: var(--bg-raised);
     border: 1px solid var(--line);
     border-radius: var(--radius-md);
     padding: 24px;
     display:flex;
-    gap: 16px;
-    align-items:flex-start;
+    flex-direction:column;
+    gap: 14px;
     transition: border-color .25s var(--ease), transform .25s var(--ease), background .25s var(--ease);
   }
-  .service-card:hover{
+  .project-card:hover{
     border-color: var(--accent-dim);
     transform: translateY(-4px);
     background: var(--bg-raised-2);
   }
-  .service-icon{
-    width: 44px; height:44px;
+  .project-top{ display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }
+  .project-icon{
+    width: 42px; height:42px;
     border-radius: 10px;
-    background: var(--accent);
-    color: var(--accent-ink);
+    background: var(--bg-raised-2);
+    border: 1px solid var(--line-strong);
+    color: var(--accent);
     display:flex; align-items:center; justify-content:center;
     flex-shrink:0;
   }
-  .service-icon svg{ width:22px; height:22px; }
-  .service-card h3{ font-size: 17px; font-weight:600; margin-bottom:6px; }
-  .service-card p{ font-size:14px; color: var(--text-muted); margin:0; }
-
-  /* ---------- Work grid ---------- */
-  .work-grid{
-    display:grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-  .work-card{
-    border-radius: var(--radius-md);
-    overflow:hidden;
-    background: var(--bg-raised);
-    border: 1px solid var(--line);
-    transition: transform .3s var(--ease), border-color .3s var(--ease);
-    cursor:pointer;
-  }
-  .work-card:hover{ transform: translateY(-6px); border-color: var(--accent-dim); }
-  .work-thumb{
-    aspect-ratio: 4/3;
-    overflow:hidden;
-    background: var(--bg-raised-2);
-  }
-  .work-thumb img{
-    width:100%; height:100%; object-fit:cover;
-    transition: transform .5s var(--ease);
-  }
-  .work-card:hover .work-thumb img{ transform: scale(1.07); }
-  .work-meta{
-    padding: 12px 14px 14px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-  }
-  .work-meta span.name{ font-size:13.5px; font-weight:600; }
-  .work-meta span.tag{
+  .project-icon svg{ width:20px; height:20px; }
+  .project-status{
     font-family: var(--font-mono);
     font-size: 10px;
-    color: var(--text-faint);
-    letter-spacing: .05em;
-  }
-
-  /* ---------- Tech stack ---------- */
-  .stack-section{
-    background: var(--bg-raised);
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-  }
-  .stack-layout{
-    display:grid;
-    grid-template-columns: 1fr;
-    gap: 34px;
-    align-items:center;
-  }
-  .stack-copy p{ color: var(--text-muted); font-size:15px; max-width: 48ch; margin-top: 10px;}
-  .stack-list{ margin-top: 22px; display:flex; flex-wrap:wrap; gap:10px; }
-  .stack-chip{
-    font-family: var(--font-mono);
-    font-size: 12px;
-    padding: 7px 13px;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    padding: 5px 10px;
     border-radius: 999px;
     border: 1px solid var(--line-strong);
     color: var(--text-muted);
+    white-space: nowrap;
   }
-  .terminal{
-    background: #0d1210;
-    border: 1px solid var(--line-strong);
-    border-radius: var(--radius-md);
-    overflow:hidden;
-    box-shadow: 0 30px 60px -30px rgba(0,0,0,0.6);
-  }
-  .terminal-bar{
-    display:flex; gap:7px;
-    padding: 12px 14px;
-    background: #101714;
-    border-bottom: 1px solid var(--line);
-  }
-  .terminal-bar span{ width:11px; height:11px; border-radius:50%; }
-  .terminal-bar span:nth-child(1){ background:#ff5f56; }
-  .terminal-bar span:nth-child(2){ background:#ffbd2e; }
-  .terminal-bar span:nth-child(3){ background:#27c93f; }
-  .terminal-body{
-    font-family: var(--font-mono);
-    font-size: 12.5px;
-    line-height: 1.9;
-    padding: 20px;
-    color: #b7c4bd;
-    overflow-x:auto;
-  }
-  .terminal-body .k{ color: var(--accent); }
-  .terminal-body .v{ color: #dfe7e3; }
-  .terminal-body .c{ color: var(--text-faint); }
-  .caret{
-    display:inline-block; width:7px; height:14px; background: var(--accent);
-    animation: blink 1.1s steps(1) infinite; vertical-align: -2px;
-  }
-  @keyframes blink{ 50%{ opacity:0; } }
-
-  /* ---------- CTA band ---------- */
-  .cta-band{
-    text-align:center;
-    padding: 100px 0;
-  }
-  .cta-band h2{ font-size: clamp(26px,5vw,42px); }
-  .cta-band p{ color: var(--text-muted); margin: 14px auto 28px; max-width: 44ch; }
-
-  /* ---------- Footer ---------- */
-  footer{ border-top: 1px solid var(--line); padding-top: 56px; }
-  .footer-grid{
-    display:grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-    padding-bottom: 40px;
-  }
-  .footer-brand p{ color: var(--text-muted); font-size: 14px; margin-top:12px; max-width: 34ch; }
-  .footer-col h4{
+  .project-status.dev{ color: var(--accent); border-color: var(--accent-dim); }
+  .project-card h3{ font-size: 17px; font-weight:600; }
+  .project-card p.desc{ font-size:13.5px; color: var(--text-muted); margin:0; }
+  .project-tags{ display:flex; flex-wrap:wrap; gap:8px; margin-top:2px; }
+  .project-tag{
     font-family: var(--font-mono);
     font-size: 11px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--text-faint);
-    margin-bottom: 16px;
+    padding: 5px 10px;
+    border-radius: 6px;
+    background: var(--bg-raised-2);
+    border: 1px solid var(--line);
+    color: var(--text-muted);
   }
-  .footer-col ul{ display:flex; flex-direction:column; gap: 11px; }
-  .footer-col a{ font-size: 14px; color: var(--text-muted); transition: color .2s; }
-  .footer-col a:hover{ color: var(--accent); }
-  .socials{ display:flex; gap:10px; margin-top:18px; }
-  .socials a{
-    width:38px; height:38px; border-radius:50%;
-    border: 1px solid var(--line-strong);
-    display:flex; align-items:center; justify-content:center;
-    transition: border-color .2s, color .2s, transform .2s;
+  .project-link{
+    margin-top: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
   }
-  .socials a:hover{ border-color: var(--accent); color: var(--accent); transform: translateY(-3px); }
-  .socials svg{ width:16px; height:16px; }
-  .footer-bottom{
+  .project-link svg{ width:14px; height:14px; transition: transform .2s var(--ease); }
+  .project-card:hover .project-link svg{ transform: translate(2px,-2px); }
+  .project-link.disabled{ color: var(--text-faint); cursor:default; }
+
+  /* ---------- Contact / links ---------- */
+  .contact-section{
+    background: var(--bg-raised);
     border-top: 1px solid var(--line);
-    padding: 22px 0 32px;
-    display:flex;
-    flex-direction:column;
-    gap:10px;
+    border-bottom: 1px solid var(--line);
+    text-align:center;
+  }
+  .contact-section p.lede{ color: var(--text-muted); max-width: 46ch; margin: 14px auto 30px; }
+  .link-grid{
+    display:grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+  .link-card{
+    display:flex; align-items:center; gap:14px;
+    padding: 15px 18px;
+    background: var(--bg);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-sm);
+    text-align:left;
+    transition: border-color .2s var(--ease), transform .2s var(--ease);
+  }
+  .link-card:hover{ border-color: var(--accent); transform: translateY(-2px); }
+  .link-icon{
+    width: 38px; height:38px; border-radius:9px;
+    background: var(--bg-raised-2);
+    display:flex; align-items:center; justify-content:center;
+    color: var(--accent);
+    flex-shrink:0;
+  }
+  .link-icon svg{ width:18px; height:18px; }
+  .link-text strong{ display:block; font-size:14px; font-weight:600; }
+  .link-text span{ font-size:12px; color: var(--text-faint); }
+
+  /* ---------- Footer ---------- */
+  footer{ padding: 34px 0; }
+  .footer-inner{
+    display:flex; flex-direction:column; gap:8px;
+    text-align:center;
     font-size: 12.5px;
     color: var(--text-faint);
   }
 
-  @media (min-width: 700px){
-    .work-grid{ grid-template-columns: repeat(3,1fr); }
-    .footer-grid{ grid-template-columns: 1.4fr 1fr 1fr 1fr; }
-    .services-grid{ grid-template-columns: repeat(3,1fr); }
-    .footer-bottom{ flex-direction:row; justify-content:space-between; }
+  @media (min-width: 640px){
+    .quick-facts{ grid-template-columns: repeat(3,1fr); }
+    .link-grid{ grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (min-width: 720px){
+    .projects-grid{ grid-template-columns: repeat(2,1fr); }
   }
 
   @media (min-width: 920px){
     .hamburger{ display:none; }
     nav.primary-nav{ display:block; }
-    .btn-ghost{ display:inline-flex; }
-    .hero-inner{ max-width: 780px; }
-    .stack-layout{ grid-template-columns: 1fr 1.15fr; }
+    .btn-outline{ display:inline-flex; }
+    .hero-top{ display:flex; align-items:center; gap:20px; }
+    footer .footer-inner{ flex-direction:row; justify-content:space-between; text-align:left; }
   }
 </style>
 </head>
@@ -440,35 +448,39 @@
 <header>
   <div class="header-inner">
     <a href="#top" class="brand" aria-label="Ondřej Košťál — home">
-      <span class="brand-name">ONDŘEJ KOŠŤÁL</span>
-      <span class="brand-tag">Design &amp; Development</span>
+      <span class="brand-text">
+        <span class="brand-name">Ondřej Košťál</span>
+        <span class="brand-tag">IT Student · CZU</span>
+        <span class="status-chip status-chip-sm">
+          <span class="status-dot"></span>
+          Open to new opportunities
+        </span>
+      </span>
     </a>
 
-    <nav class="primary-nav" aria-label="Primary">
+    <nav class="primary-nav" aria-label="Primary navigation">
       <ul>
-        <li><a href="#top">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#work">Work</a></li>
-        <li><a href="#stack">Process</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
 
     <div class="header-actions">
-      <a href="#contact" class="btn btn-ghost">Get a quote</a>
-      <a href="#contact" class="btn btn-accent">Contact</a>
+      <a href="#contact" class="btn btn-outline">Contact</a>
+      <a href="#projects" class="btn btn-accent">Projects</a>
       <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileNav">
         <span><i></i></span>
       </button>
     </div>
   </div>
 
-  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
     <ul>
-      <li><a href="#top">Home</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#work">Work</a></li>
-      <li><a href="#stack">Process</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -476,177 +488,211 @@
 
 <main id="top">
 
-  <section class="hero">
+  <section class="hero" id="about">
     <div class="wrap hero-inner">
-      <p class="eyebrow reveal hero-eyebrow">Brand &amp; Product Designer</p>
-      <h1 class="reveal">Engineering <mark>digital experiences</mark> that connect.</h1>
-      <p class="lede reveal">A multi-disciplinary graphic designer specializing in brand identity, packaging, and digital experiences — from first sketch to shipped product.</p>
+      <p class="eyebrow reveal">IT Student &amp; Application Support</p>
+      <h1 class="reveal">Ondřej <span>Košťál</span></h1>
+
+      <blockquote class="reveal">
+        Information Technology student at the Czech University of Life Sciences Prague (CZU), committed to continuously growing and taking on new technical challenges. Even-tempered and a fast learner, I value persistence in every project I take on. A good cup of coffee and a positive mindset get my mornings started — rain permitting.
+      </blockquote>
+
       <div class="hero-cta reveal">
-        <a href="#work" class="btn btn-accent">View my portfolio</a>
-        <a href="#contact" class="btn btn-outline">Start a project</a>
+        <a href="#projects" class="btn btn-accent">View projects</a>
+        <a href="#contact" class="btn btn-outline" style="display:inline-flex;">Get in touch</a>
+      </div>
+
+      <div class="quick-facts reveal-stagger">
+        <div class="fact reveal" style="--i:0">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c0 1.1 2.7 2 6 2s6-.9 6-2v-5"/></svg>
+          <div><strong>Education</strong><span>Information Technology, CZU</span></div>
+        </div>
+        <div class="fact reveal" style="--i:1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          <div><strong>Experience</strong><span>2 years — Application Support (IS/IT)</span></div>
+        </div>
+        <div class="fact reveal" style="--i:2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
+          <div><strong>Focus</strong><span>Python, C#, JavaScript</span></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="services">
+  <section id="skills">
     <div class="wrap">
       <div class="section-head reveal">
-        <p class="eyebrow">What I do</p>
-        <h2>My creative services</h2>
+        <p class="eyebrow">What I know</p>
+        <h2>Skills &amp; Experience</h2>
       </div>
-      <div class="services-grid reveal-stagger">
-        <div class="service-card reveal" style="--i:0">
-          <div class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
-          </div>
+
+      <div class="skills-list reveal-stagger">
+        <div class="skill-row reveal" style="--i:0">
+          <div class="skill-top"><span class="skill-name">Python</span><span class="skill-level">Basic level</span></div>
+          <div class="skill-track"><div class="skill-fill" data-width="40"></div></div>
+        </div>
+        <div class="skill-row reveal" style="--i:1">
+          <div class="skill-top"><span class="skill-name">C#</span><span class="skill-level">Basic level</span></div>
+          <div class="skill-track"><div class="skill-fill" data-width="40"></div></div>
+        </div>
+        <div class="skill-row reveal" style="--i:2">
+          <div class="skill-top"><span class="skill-name">JavaScript</span><span class="skill-level">Very basic</span></div>
+          <div class="skill-track"><div class="skill-fill" data-width="20"></div></div>
+        </div>
+      </div>
+
+      <div class="exp-list reveal-stagger">
+        <div class="exp-item reveal" style="--i:0">
+          <div class="exp-dot"></div>
           <div>
-            <h3>Brand Identity</h3>
-            <p>Logos, type systems, and visual guidelines built to hold up across every touchpoint a brand shows up in.</p>
+            <div class="exp-role">Application Support (IS/IT)</div>
+            <div class="exp-meta">2 YEARS EXPERIENCE</div>
+            <p class="exp-desc">Supported internal information systems, resolved user requests, and built small process automations.</p>
           </div>
         </div>
-        <div class="service-card reveal" style="--i:1">
-          <div class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8l9 5 9-5Z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
-          </div>
+        <div class="exp-item reveal" style="--i:1">
+          <div class="exp-dot"></div>
           <div>
-            <h3>Packaging Design</h3>
-            <p>Structural and surface design for physical products — from concept sketches to print-ready files.</p>
-          </div>
-        </div>
-        <div class="service-card reveal" style="--i:2">
-          <div class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-          </div>
-          <div>
-            <h3>Digital Experience</h3>
-            <p>Interfaces and interactions for web and mobile, designed and built with equal attention to both.</p>
+            <div class="exp-role">Student — Information Technology</div>
+            <div class="exp-meta">CZU · ONGOING</div>
+            <p class="exp-desc">Expanding my knowledge of programming and software development while working on personal and academic projects.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="work">
+  <section id="projects">
     <div class="wrap">
       <div class="section-head reveal">
-        <p class="eyebrow">Selected work</p>
-        <h2>Recent projects</h2>
+        <p class="eyebrow">What I've built</p>
+        <h2>Selected Projects</h2>
       </div>
-      <div class="work-grid reveal-stagger">
-        <div class="work-card reveal" style="--i:0">
-          <div class="work-thumb"><img src="https://placehold.co/480x360/1a1512/e8ddd3?text=Cosmetics" alt="Cosmetics brand packaging set on a warm neutral backdrop" loading="lazy"></div>
-          <div class="work-meta"><span class="name">Cosmetics</span><span class="tag">BRANDING</span></div>
+
+      <div class="projects-grid reveal-stagger">
+
+        <div class="project-card reveal" style="--i:0">
+          <div class="project-top">
+            <div class="project-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg>
+            </div>
+            <span class="project-status dev">In development</span>
+          </div>
+          <h3>CZU Tridant</h3>
+          <p class="desc">A tool for checking and booking exam slots at CZU — automates tracking available dates and reserving them.</p>
+          <div class="project-tags">
+            <span class="project-tag">Python</span>
+          </div>
+          <span class="project-link disabled" aria-disabled="true">
+            Link coming soon
+          </span>
         </div>
-        <div class="work-card reveal" style="--i:1">
-          <div class="work-thumb"><img src="https://placehold.co/480x360/2b1f16/d8b98d?text=K%C3%A1va" alt="Coffee bag packaging design mockup" loading="lazy"></div>
-          <div class="work-meta"><span class="name">Káva</span><span class="tag">PACKAGING</span></div>
+
+        <div class="project-card reveal" style="--i:1">
+          <div class="project-top">
+            <div class="project-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 20 6-6M8 8l8 8M14 2l8 8-4 4-8-8Z"/></svg>
+            </div>
+            <span class="project-status">School project</span>
+          </div>
+          <h3>AdventureGuide</h3>
+          <p class="desc">A console-based adventure game where random dice rolls shape the story. Built as a school project.</p>
+          <div class="project-tags">
+            <span class="project-tag">C#</span>
+            <span class="project-tag">Console App</span>
+          </div>
+          <span class="project-link disabled" aria-disabled="true">
+            Link coming soon
+          </span>
         </div>
-        <div class="work-card reveal" style="--i:2">
-          <div class="work-thumb"><img src="https://placehold.co/480x360/2f3fae/ffffff?text=Aplikace" alt="Mobile app UI shown on three phone mockups" loading="lazy"></div>
-          <div class="work-meta"><span class="name">Aplikace</span><span class="tag">PRODUCT</span></div>
+
+        <div class="project-card reveal" style="--i:2">
+          <div class="project-top">
+            <div class="project-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <span class="project-status">Confidential</span>
+          </div>
+          <h3>Internal Apps Script Automation</h3>
+          <p class="desc">A set of automation scripts built in a work environment to simplify repetitive tasks. Details are private due to confidentiality.</p>
+          <div class="project-tags">
+            <span class="project-tag">Apps Script</span>
+            <span class="project-tag">JavaScript</span>
+          </div>
+          <span class="project-link disabled" aria-disabled="true">
+            Private project
+          </span>
         </div>
-        <div class="work-card reveal" style="--i:3">
-          <div class="work-thumb"><img src="https://placehold.co/480x360/6ef0c2/06231a?text=Aplikace" alt="Mobile onboarding app screens with mint accent" loading="lazy"></div>
-          <div class="work-meta"><span class="name">Aplikace</span><span class="tag">PRODUCT</span></div>
+
+        <div class="project-card reveal" style="--i:3">
+          <div class="project-top">
+            <div class="project-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 3a15 15 0 0 0 0 18M12 3a15 15 0 0 1 0 18M3 12h18"/></svg>
+            </div>
+            <span class="project-status">This website</span>
+          </div>
+          <h3>Personal CV Website</h3>
+          <p class="desc">This page — a responsive personal bio and project overview, built from scratch with plain HTML, CSS, and JavaScript.</p>
+          <div class="project-tags">
+            <span class="project-tag">HTML</span>
+            <span class="project-tag">CSS</span>
+            <span class="project-tag">JavaScript</span>
+          </div>
+          <a href="#top" class="project-link">
+            You're looking at it right now
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+          </a>
         </div>
-        <div class="work-card reveal" style="--i:4">
-          <div class="work-thumb"><img src="https://placehold.co/480x360/4a3a2c/e0c9a6?text=Apince" alt="E-reader device product photography" loading="lazy"></div>
-          <div class="work-meta"><span class="name">Apince</span><span class="tag">PRODUCT</span></div>
-        </div>
-        <div class="work-card reveal" style="--i:5">
-          <div class="work-thumb"><img src="https://placehold.co/480x360/d9d9d9/2b2b2b?text=%C4%8Casopis" alt="Magazine cover layout design" loading="lazy"></div>
-          <div class="work-meta"><span class="name">Časopis</span><span class="tag">EDITORIAL</span></div>
-        </div>
+
       </div>
     </div>
   </section>
 
-  <section id="stack" class="stack-section">
-    <div class="wrap">
-      <div class="stack-layout">
-        <div class="stack-copy reveal">
-          <p class="eyebrow">How it gets built</p>
-          <h2 style="font-size: clamp(22px,3.6vw,30px); margin-top:10px; font-weight:700;">Technical stack &amp; process</h2>
-          <p>Design and development live in the same hands here, so what ships matches what was designed — no handoff drift, no lost detail.</p>
-          <div class="stack-list">
-            <span class="stack-chip">Figma</span>
-            <span class="stack-chip">React</span>
-            <span class="stack-chip">JavaScript</span>
-            <span class="stack-chip">CSS</span>
-            <span class="stack-chip">Node.js</span>
-            <span class="stack-chip">Framer Motion</span>
-          </div>
-        </div>
-        <div class="terminal reveal">
-          <div class="terminal-bar"><span></span><span></span><span></span></div>
-          <div class="terminal-body">
-<span class="c">~/studio</span> <span class="k">$</span> <span class="v">./process.sh</span>
-<span class="c">01</span> <span class="k">discover</span>  <span class="v">brief, audience, constraints</span>
-<span class="c">02</span> <span class="k">design</span>    <span class="v">system, layout, prototype</span>
-<span class="c">03</span> <span class="k">build</span>     <span class="v">component-driven, responsive</span>
-<span class="c">04</span> <span class="k">review</span>    <span class="v">a11y, performance, QA</span>
-<span class="c">05</span> <span class="k">ship</span>      <span class="v">deploy &amp; hand off</span>
-
-<span class="c">status</span>  <span class="v">available for new projects</span><span class="caret"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="cta-band" id="contact">
+  <section class="contact-section" id="contact">
     <div class="wrap reveal">
-      <p class="eyebrow" style="justify-content:center;">Let's work together</p>
-      <h2 style="margin-top:10px;">Have a project in mind?</h2>
-      <p>I'm currently taking on a small number of new engagements — tell me about your brand and where it needs to go.</p>
-      <a href="mailto:info@ondfal.com" class="btn btn-accent">info@ondfal.com</a>
+      <p class="eyebrow" style="justify-content:center;">Let's connect</p>
+      <h2 style="margin-top:10px; font-size: clamp(22px,4vw,32px);">Contact &amp; Links</h2>
+      <p class="lede">The links below will be added soon — for now, this is a placeholder for LinkedIn, GitHub, and email.</p>
+
+      <div class="link-grid">
+        <!-- TODO: add real LinkedIn link -->
+        <a href="#" class="link-card" aria-label="LinkedIn profile">
+          <div class="link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 11v5M8 8v.01M12 16v-3a2 2 0 0 1 4 0v3M12 11v5"/></svg>
+          </div>
+          <div class="link-text"><strong>LinkedIn</strong><span>Link coming soon</span></div>
+        </a>
+        <!-- TODO: add real GitHub link -->
+        <a href="#" class="link-card" aria-label="GitHub profile">
+          <div class="link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+          </div>
+          <div class="link-text"><strong>GitHub</strong><span>Link coming soon</span></div>
+        </a>
+        <!-- TODO: add real email -->
+        <a href="#" class="link-card" aria-label="Email">
+          <div class="link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+          </div>
+          <div class="link-text"><strong>Email</strong><span>Coming soon</span></div>
+        </a>
+        <!-- TODO: add any additional link -->
+        <a href="#" class="link-card" aria-label="Additional link">
+          <div class="link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.5.4l2-2a5 5 0 0 0-7-7l-1.1 1.1"/><path d="M14 11a5 5 0 0 0-7.5-.4l-2 2a5 5 0 0 0 7 7l1.1-1.1"/></svg>
+          </div>
+          <div class="link-text"><strong>Additional link</strong><span>Optional</span></div>
+        </a>
+      </div>
     </div>
   </section>
 
 </main>
 
 <footer>
-  <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand reveal">
-        <span class="brand-name" style="font-size:18px;">ONDŘEJ KOŠŤÁL</span>
-        <p>Multi-disciplinary graphic designer specializing in brand identity, packaging, and digital experiences.</p>
-        <div class="socials">
-          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3h-3a4 4 0 0 0-4 4v3H7v4h3v7h4v-7h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-          <a href="#" aria-label="Twitter / X"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m4 4 16 16M20 4 4 20"/></svg></a>
-          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 11v5M8 8v.01M12 16v-3a2 2 0 0 1 4 0v3M12 11v5"/></svg></a>
-        </div>
-      </div>
-      <div class="footer-col reveal">
-        <h4>Sitemap</h4>
-        <ul>
-          <li><a href="#top">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-col reveal">
-        <h4>Studio</h4>
-        <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Careers</a></li>
-        </ul>
-      </div>
-      <div class="footer-col reveal">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="tel:+420903533630">+420 903 533 630</a></li>
-          <li><a href="mailto:info@ondfal.com">info@ondfal.com</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Ondřej Košťál. All rights reserved.</span>
-      <span>Design &amp; Development by Ondřej Košťál</span>
-    </div>
+  <div class="wrap footer-inner">
+    <span>© 2026 Ondřej Košťál</span>
+    <span>This site was built as a personal project</span>
   </div>
 </footer>
 
@@ -684,6 +730,23 @@
     revealEls.forEach(el => io.observe(el));
   } else {
     revealEls.forEach(el => el.classList.add('in-view'));
+  }
+
+  // Animate skill bars once visible
+  const skillFills = document.querySelectorAll('.skill-fill');
+  if ('IntersectionObserver' in window) {
+    const skillIo = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          el.style.width = el.dataset.width + '%';
+          skillIo.unobserve(el);
+        }
+      });
+    }, { threshold: 0.4 });
+    skillFills.forEach(el => skillIo.observe(el));
+  } else {
+    skillFills.forEach(el => { el.style.width = el.dataset.width + '%'; });
   }
 </script>
 
